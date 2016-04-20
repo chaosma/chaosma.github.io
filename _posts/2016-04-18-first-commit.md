@@ -17,14 +17,31 @@ published: true
 >&quot;If anything is worth doing, do it with all your heart.&quot;
 ><small><cite title="Buddha">Buddha</cite></small>
 
-I have been away from the blog for quite a while. Recently, I encountered a wonderfull static website generating tool-Jekyll. After a searching online, I decided to use [hmfaysal-omega-theme](https://github.com/hmfaysal/hmfaysal-omega-theme) and begin to build my new blog. Here is my old blog building from Django+MongoDB [threelifestone](http://threelifestone.com). If the link not work, it means I close it in the future of this writing. I need some time to familiar with the tool. First, to show a piece of code as shown in below, just use four space before each line. It is very similar to the stack overflow code style. 
+I have been away from the blog for quite a while. Recently, I encountered a wonderfull static website generating tool-Jekyll. After searching online, I decided to use [hmfaysal-omega-theme](https://github.com/hmfaysal/hmfaysal-omega-theme) and began to build my new blog. Here is my old blog building from Django+MongoDB [threelifestone](http://threelifestone.com). If the link not work, I must have close it in the future. 
+
+
+
+<section id="table-of-contents" class="toc">
+  <header>
+    <h1>Simple examples</h1>
+  </header>
+<div id="drawer" markdown="1">
+*  Auto generated table of contents
+{:toc}
+</div>
+</section><!-- /#table-of-contents -->
+
+
+## Plain code style ##
+Below shows a piece of code, just use four space before each line. It is very similar to the stack overflow code style. 
 
     It has four spaces before
      It has five spaces before
       It has six spaces before    
   
 
-For code highlight:
+## Code highlighting ##
+Jekyll uses Liquid templating language. It supports many language highlights. Here is a python example:
 
 {% highlight python %}
 def bagOfWords2VecMN(vocabList, inputSet):
@@ -35,73 +52,41 @@ def bagOfWords2VecMN(vocabList, inputSet):
     return returnVec
 {% endhighlight %}
 
-Here is an example of table of contents:
-
-<section id="table-of-contents" class="toc">
-  <header>
-    <h1>Table of contents</h1>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
-
-## Item 1 ##
-
-Notice that, ## Spaces before and after Item 1 ##
-
-## Item 2 ##
-
-Content of item 2
-
-## Hello, world! ##
-This is a classical example.
-Good luck!
 
 ---
 
-## Item 3  
+## Lists ## 
 
-Item 3 only has ## on the left. Notice the line above item 3.
+ 
 
-### Subitem 1
+### Item list
 
-Subitem 1 has ### on the left
+One example:
+ 
+* Drink more water
+* Do practice everyday
+* Have fun
 
+Another example:
 
-### Subitem 2
+- Practice is the key
+- Reflection
+    - retrospect
+    - always think why	
+- Whatever
 
-This is subitem 2. Notice the line below 
-
-
----
-
-## Other Items ##
-
-* aaaaa
-* bbbbb
-* ccccc
-
-
-**********************************
-
-Examples of list:
-
-- Item A1
-- Item B1
-   - Subitem C1
-
-List with numbers:
+ 
+### Number list 
 
 1. item 1
 1. item 2
-    1. subitem 3
 
 ---
 
+##  Insert image ##
 
 Now, comes to image: 
+
 <figure>
         <a href="{{ site.url }}/images/gallery1/shahua.jpg"><img src="{{ site.url }}/images/gallery1/shahua.jpg"></a>
 </figure>
@@ -112,7 +97,9 @@ Now, comes to image:
 
 ----
 
-For mathematical equations, turn on mathjax. Here is the famous Schrodinger equation[^1]:
+## Latex support ## 
+
+**Schrodinger equation[^1]**
 
 $$\frac{-\hbar}{2m}\frac{\partial^2\Psi(x,t)}{\partial x^2} + U(x)\Psi(x,t) = i\hbar\frac{\partial(x,t)}{\partial t}$$
 
@@ -132,7 +119,7 @@ $$\begin{align}
 
 ---
 
-To show splited columns:
+## Split columns ##
 
 <div class="col-md-6">
 <p class="lead">This is left column. If want to show three columns instead of two, just repeat div class col-md-x three times.</p>
@@ -143,6 +130,8 @@ To show splited columns:
 </div>
 <br>
 
+
+---
 
 Here you go.
 

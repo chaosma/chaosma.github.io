@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Chao</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://chaosma.github.io//feed.xml" />
-<link rel="alternate" type="text/html" href="http://chaosma.github.io/" />
-<updated>2016-04-19T23:05:09-06:00</updated>
-<id>http://chaosma.github.io//</id>
+<link rel="self" type="application/atom+xml" href="http://chaosma.github.io/feed.xml" />
+<link rel="alternate" type="text/html" href="http://chaosma.github.io" />
+<updated>2016-04-20T23:04:07+01:00</updated>
+<id>http://chaosma.github.io/</id>
 <author>
   <name>Chao</name>
-  <uri>http://chaosma.github.io//</uri>
+  <uri>http://chaosma.github.io/</uri>
   <email>mc8305@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[First Commit]]></title>
-  <link>http://chaosma.github.io//personal/first-commit</link>
-  <id>http://chaosma.github.io//personal/first-commit</id>
-  <published>2016-04-18T00:00:00-06:00</published>
-  <updated>2016-04-18T00:00:00-06:00</updated>
+  <link>http://chaosma.github.io/personal/first-commit</link>
+  <id>http://chaosma.github.io/personal/first-commit</id>
+  <published>2016-04-18T00:00:00+01:00</published>
+  <updated>2016-04-18T00:00:00+01:00</updated>
   <author>
     <name>Chao</name>
-    <uri>http://chaosma.github.io/</uri>
+    <uri>http://chaosma.github.io</uri>
     <email>mc8305@gmail.com</email>
   </author>
   <content type="html">&lt;blockquote&gt;
@@ -29,14 +29,41 @@
 &lt;small&gt;&lt;cite title=&quot;Buddha&quot;&gt;Buddha&lt;/cite&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;I have been away from the blog for quite a while. Recently, I encountered a wonderfull static website generating tool-Jekyll. After a searching online, I decided to use &lt;a href=&quot;https://github.com/hmfaysal/hmfaysal-omega-theme&quot;&gt;hmfaysal-omega-theme&lt;/a&gt; and begin to build my new blog. Here is my old blog building from Django+MongoDB &lt;a href=&quot;http://threelifestone.com&quot;&gt;threelifestone&lt;/a&gt;. If the link not work, it means I close it in the future of this writing. I need some time to familiar with the tool. First, to show a piece of code as shown in below, just use four space before each line. It is very similar to the stack overflow code style.&lt;/p&gt;
+&lt;p&gt;I have been away from the blog for quite a while. Recently, I encountered a wonderfull static website generating tool-Jekyll. After searching online, I decided to use &lt;a href=&quot;https://github.com/hmfaysal/hmfaysal-omega-theme&quot;&gt;hmfaysal-omega-theme&lt;/a&gt; and began to build my new blog. Here is my old blog building from Django+MongoDB &lt;a href=&quot;http://threelifestone.com&quot;&gt;threelifestone&lt;/a&gt;. If the link not work, I must have close it in the future.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;It has four spaces before
+&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Simple examples&lt;/h1&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#plain-code-style&quot; id=&quot;markdown-toc-plain-code-style&quot;&gt;Plain code style&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#code-highlighting&quot; id=&quot;markdown-toc-code-highlighting&quot;&gt;Code highlighting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lists&quot; id=&quot;markdown-toc-lists&quot;&gt;Lists&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#item-list&quot; id=&quot;markdown-toc-item-list&quot;&gt;Item list&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#number-list&quot; id=&quot;markdown-toc-number-list&quot;&gt;Number list&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#insert-image&quot; id=&quot;markdown-toc-insert-image&quot;&gt;Insert image&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#latex-support&quot; id=&quot;markdown-toc-latex-support&quot;&gt;Latex support&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#split-columns&quot; id=&quot;markdown-toc-split-columns&quot;&gt;Split columns&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;h2 id=&quot;plain-code-style&quot;&gt;Plain code style&lt;/h2&gt;
+&lt;p&gt;Below shows a piece of code, just use four space before each line. It is very similar to the stack overflow code style.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;It has four spaces before
  It has five spaces before
   It has six spaces before    
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;For code highlight:&lt;/p&gt;
+&lt;h2 id=&quot;code-highlighting&quot;&gt;Code highlighting&lt;/h2&gt;
+&lt;p&gt;Jekyll uses Liquid templating language. It supports many language highlights. Here is a python example:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bagOfWords2VecMN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocabList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;returnVec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocabList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -45,103 +72,59 @@
             &lt;span class=&quot;n&quot;&gt;returnVec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocabList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;returnVec&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Here is an example of table of contents:&lt;/p&gt;
-
-&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
-  &lt;header&gt;
-    &lt;h1&gt;Table of contents&lt;/h1&gt;
-  &lt;/header&gt;
-&lt;div id=&quot;drawer&quot;&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#item-1&quot; id=&quot;markdown-toc-item-1&quot;&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#item-2&quot; id=&quot;markdown-toc-item-2&quot;&gt;Item 2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#hello-world&quot; id=&quot;markdown-toc-hello-world&quot;&gt;Hello, world!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#item-3&quot; id=&quot;markdown-toc-item-3&quot;&gt;Item 3&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#subitem-1&quot; id=&quot;markdown-toc-subitem-1&quot;&gt;Subitem 1&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#subitem-2&quot; id=&quot;markdown-toc-subitem-2&quot;&gt;Subitem 2&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#other-items&quot; id=&quot;markdown-toc-other-items&quot;&gt;Other Items&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- /#table-of-contents --&gt;
-
-&lt;h2 id=&quot;item-1&quot;&gt;Item 1&lt;/h2&gt;
-
-&lt;p&gt;Notice that, ## Spaces before and after Item 1 ##&lt;/p&gt;
-
-&lt;h2 id=&quot;item-2&quot;&gt;Item 2&lt;/h2&gt;
-
-&lt;p&gt;Content of item 2&lt;/p&gt;
-
-&lt;h2 id=&quot;hello-world&quot;&gt;Hello, world!&lt;/h2&gt;
-&lt;p&gt;This is a classical example.
-Good luck!&lt;/p&gt;
-
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;item-3&quot;&gt;Item 3&lt;/h2&gt;
+&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;/h2&gt;
 
-&lt;p&gt;Item 3 only has ## on the left. Notice the line above item 3.&lt;/p&gt;
+&lt;h3 id=&quot;item-list&quot;&gt;Item list&lt;/h3&gt;
 
-&lt;h3 id=&quot;subitem-1&quot;&gt;Subitem 1&lt;/h3&gt;
-
-&lt;p&gt;Subitem 1 has ### on the left&lt;/p&gt;
-
-&lt;h3 id=&quot;subitem-2&quot;&gt;Subitem 2&lt;/h3&gt;
-
-&lt;p&gt;This is subitem 2. Notice the line below&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;other-items&quot;&gt;Other Items&lt;/h2&gt;
+&lt;p&gt;One example:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;aaaaa&lt;/li&gt;
-  &lt;li&gt;bbbbb&lt;/li&gt;
-  &lt;li&gt;ccccc&lt;/li&gt;
+  &lt;li&gt;Drink more water&lt;/li&gt;
+  &lt;li&gt;Do practice everyday&lt;/li&gt;
+  &lt;li&gt;Have fun&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
-
-&lt;p&gt;Examples of list:&lt;/p&gt;
+&lt;p&gt;Another example:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Item A1&lt;/li&gt;
-  &lt;li&gt;Item B1
+  &lt;li&gt;Practice is the key&lt;/li&gt;
+  &lt;li&gt;Reflection
     &lt;ul&gt;
-      &lt;li&gt;Subitem C1&lt;/li&gt;
+      &lt;li&gt;retrospect&lt;/li&gt;
+      &lt;li&gt;always think why&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;Whatever&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;List with numbers:&lt;/p&gt;
+&lt;h3 id=&quot;number-list&quot;&gt;Number list&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;item 1&lt;/li&gt;
-  &lt;li&gt;item 2
-    &lt;ol&gt;
-      &lt;li&gt;subitem 3&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
+  &lt;li&gt;item 2&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
 
+&lt;h2 id=&quot;insert-image&quot;&gt;Insert image&lt;/h2&gt;
+
 &lt;p&gt;Now, comes to image:&lt;/p&gt;
+
 &lt;figure&gt;
-        &lt;a href=&quot;http://chaosma.github.io//images/gallery1/shahua.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io//images/gallery1/shahua.jpg&quot; /&gt;&lt;/a&gt;
+        &lt;a href=&quot;http://chaosma.github.io/images/gallery1/shahua.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io/images/gallery1/shahua.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;figure class=&quot;half&quot;&gt;
-        &lt;a href=&quot;http://chaosma.github.io//images/gallery1/IMG059.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io//images/gallery1/IMG059.jpg&quot; /&gt;&lt;/a&gt;
-        &lt;a href=&quot;http://chaosma.github.io//images/gallery1/IMG072.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io//images/gallery1/IMG072.jpg&quot; /&gt;&lt;/a&gt;
+        &lt;a href=&quot;http://chaosma.github.io/images/gallery1/IMG059.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io/images/gallery1/IMG059.jpg&quot; /&gt;&lt;/a&gt;
+        &lt;a href=&quot;http://chaosma.github.io/images/gallery1/IMG072.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io/images/gallery1/IMG072.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;For mathematical equations, turn on mathjax. Here is the famous Schrodinger equation&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;h2 id=&quot;latex-support&quot;&gt;Latex support&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Schrodinger equation&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{-\hbar}{2m}\frac{\partial^2\Psi(x,t)}{\partial x^2} + U(x)\Psi(x,t) = i\hbar\frac{\partial(x,t)}{\partial t}&lt;/script&gt;
 
@@ -159,7 +142,7 @@ Good luck!&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;To show splited columns:&lt;/p&gt;
+&lt;h2 id=&quot;split-columns&quot;&gt;Split columns&lt;/h2&gt;
 
 &lt;div class=&quot;col-md-6&quot;&gt;
 &lt;p class=&quot;lead&quot;&gt;This is left column. If want to show three columns instead of two, just repeat div class col-md-x three times.&lt;/p&gt;
@@ -169,6 +152,8 @@ Good luck!&lt;/p&gt;
 &lt;p class=&quot;lead&quot;&gt;This is the right column. Notice that we can specify col-md-x, where x is the number, but they add up should equal 12 in this site settings. &lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;Here you go.&lt;/p&gt;
 
@@ -180,7 +165,7 @@ Good luck!&lt;/p&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://chaosma.github.io//personal/first-commit&quot;&gt;First Commit&lt;/a&gt; was originally published by Chao at &lt;a href=&quot;http://chaosma.github.io/&quot;&gt;Chao&lt;/a&gt; on April 18, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://chaosma.github.io/personal/first-commit&quot;&gt;First Commit&lt;/a&gt; was originally published by Chao at &lt;a href=&quot;http://chaosma.github.io&quot;&gt;Chao&lt;/a&gt; on April 18, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>

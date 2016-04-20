@@ -18,6 +18,15 @@
    
 3. _config.yml
   
-    url: (for localhost, click the logo will not going to main page, need fix)
+    url: "http://chaosma.github.io"
 
 4. cursive class is defined in style.css to describe the cursive font. It used in post.html for page description and when feature turned on
+
+5. delete lighter style in post.html and index.html to make title Not lighter
+
+6. In style.css, change slide menu style to:
+   a#slide:after{
+   content: "\f0ca";
+   font-family:FontAwesome;
+   }
+
