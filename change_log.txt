@@ -1,0 +1,23 @@
+1. change the font size of post title in the index.html, and make it not always upper case
+   style.css -> .super -> font-size: 35px;
+
+ .super {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+ /* text-transform: uppercase; */
+}
+
+   
+2. change font size of post content in index.html
+   style.css -> 
+   .lead {
+     font-size: 20px;
+     line-height: 1.5em;
+   }
+   
+3. _config.yml
+  
+    url: (for localhost, click the logo will not going to main page, need fix)
+
+4. cursive class is defined in style.css to describe the cursive font. It used in post.html for page description and when feature turned on
