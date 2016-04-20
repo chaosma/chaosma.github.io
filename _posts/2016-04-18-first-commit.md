@@ -8,7 +8,7 @@ tags:
   - blog
   - jekyll
 imagefeature: "summer_road.jpg"
-comments: false
+comments: true
 mathjax: true
 featured: false
 published: true
