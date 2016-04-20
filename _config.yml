@@ -9,7 +9,7 @@ search:           true
 # share to social link such as twitter and facebook
 share:            false
 # Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
-readtime:         true
+readtime:         false
 # Specify the average Words per minute. If not defined, 180 will be used
 wpm:				      180
 # Turn on or off the fin animations in the header and footer
