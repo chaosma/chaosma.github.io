@@ -2,25 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      
     <url>
-        <loc>/</loc>
+        <loc>http://chaosma.github.io//</loc>
     </url> 
     <url>
-        <loc>/documentation</loc>
+        <loc>http://chaosma.github.io//categories</loc>
     </url> 
     <url>
-        <loc>/categories</loc>
-    </url> 
-    <url>
-        <loc>/tags</loc>
+        <loc>http://chaosma.github.io//tags</loc>
     </url>
     
     
     <url>
-        <loc>/status/test-for-status-post</loc>
-    </url>
-    
-    <url>
-        <loc>/personal/first-commit</loc>
+        <loc>http://chaosma.github.io//personal/first-commit</loc>
     </url>
     
 </urlset>

@@ -1,17 +1,9 @@
 [
 	
 		{
-		  "title"      : "test for status post",
-		  "category"   : "status",
-		  "url"        : "/status/test-for-status-post",
-		  "date"       : "2016-04-19 00:00:00 -0600",
-		  "shortdate"  : "April 19, 2016"
-		} ,
-	
-		{
 		  "title"      : "First Commit",
 		  "category"   : "",
-		  "url"        : "/personal/first-commit",
+		  "url"        : "http://chaosma.github.io//personal/first-commit",
 		  "date"       : "2016-04-18 00:00:00 -0600",
 		  "shortdate"  : "April 18, 2016"
 		} 

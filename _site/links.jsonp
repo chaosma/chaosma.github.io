@@ -2,12 +2,7 @@ callback([
 
   {
     "text": "First Commit",
-    "href": "/personal/first-commit"
-  } ,
-
-  {
-    "text": "test for status post",
-    "href": "/status/test-for-status-post"
+    "href": "http://chaosma.github.io//personal/first-commit"
   } 
 
 ])
