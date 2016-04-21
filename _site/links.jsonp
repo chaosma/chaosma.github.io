@@ -2,12 +2,12 @@ callback([
 
   {
     "text": "First Commit",
-    "href": "/personal/first-commit"
+    "href": "http://chaosma.github.io/personal/first-commit"
   } ,
 
   {
     "text": "回忆杭州之西溪湿地",
-    "href": "/personal/hangzhou-xixi"
+    "href": "http://chaosma.github.io/personal/hangzhou-xixi"
   } 
 
 ])

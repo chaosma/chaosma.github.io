@@ -3,7 +3,7 @@
 		{
 		  "title"      : "回忆杭州之西溪湿地",
 		  "category"   : "",
-		  "url"        : "/personal/hangzhou-xixi",
+		  "url"        : "http://chaosma.github.io/personal/hangzhou-xixi",
 		  "date"       : "2016-04-20 00:00:00 -0600",
 		  "shortdate"  : "April 20, 2016"
 		} ,
@@ -11,7 +11,7 @@
 		{
 		  "title"      : "First Commit",
 		  "category"   : "",
-		  "url"        : "/personal/first-commit",
+		  "url"        : "http://chaosma.github.io/personal/first-commit",
 		  "date"       : "2016-04-18 00:00:00 -0600",
 		  "shortdate"  : "April 18, 2016"
 		} 
