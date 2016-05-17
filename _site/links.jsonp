@@ -1,8 +1,8 @@
 callback([
 
   {
-    "text": "First Commit",
-    "href": "/personal/first-commit"
+    "text": "Use Jekyll to create static personal blog",
+    "href": "/personal/use-Jekyll-for-myblog"
   } ,
 
   {

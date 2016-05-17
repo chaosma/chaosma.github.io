@@ -1,6 +1,6 @@
 ---
 layout: post
-title: First Commit
+title: Use Jekyll to create static personal blog
 description: "Here is post description"
 headline: "Here is headline"
 categories: personal
