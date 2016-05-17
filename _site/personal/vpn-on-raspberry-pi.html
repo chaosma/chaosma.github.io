@@ -2,32 +2,32 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>回忆杭州之西溪湿地 &#8211; Chao</title>
-<meta name="description" content="往事如风">
-<meta name="keywords" content="杭州, blog">
+<title>Install VPN on Raspberry Pi &#8211; Chao</title>
+<meta name="description" content="Nothing is really attained">
+<meta name="keywords" content="raspberry pi, vpn">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="/images/hangzhouxixi.jpg">
+<meta name="twitter:image" content="/images/raspberry-pi.jpg">
 
-<meta name="twitter:title" content="回忆杭州之西溪湿地">
-<meta name="twitter:description" content="往事如风">
+<meta name="twitter:title" content="Install VPN on Raspberry Pi">
+<meta name="twitter:description" content="Nothing is really attained">
 <meta name="twitter:creator" content="@ohmygoddess2">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回忆杭州之西溪湿地">
-<meta property="og:description" content="往事如风">
-<meta property="og:url" content="/personal/hangzhou-xixi">
+<meta property="og:title" content="Install VPN on Raspberry Pi">
+<meta property="og:description" content="Nothing is really attained">
+<meta property="og:url" content="/personal/vpn-on-raspberry-pi">
 <meta property="og:site_name" content="Chao">
-<meta property="og:image" content="/images/hangzhouxixi.jpg">
+<meta property="og:image" content="/images/raspberry-pi.jpg">
 
 
 
 
 
-<link rel="canonical" href="/personal/hangzhou-xixi">
+<link rel="canonical" href="/personal/vpn-on-raspberry-pi">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chao Feed">
 
 
@@ -49,6 +49,32 @@
 </div><!-- ./search-wrapper -->
 
 
+<!--Load Mathjax-->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
 
 
 <!-- Icons -->
@@ -91,7 +117,7 @@
     
     
 </aside>
-<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(/images/hangzhouxixi.jpg)" itemscope itemtype="http://schema.org/Organization">
+<header id="masthead" class="blog-background overlay align-center align-middle animated from-bottom"  style="background-image: url(/images/raspberry-pi.jpg)" itemscope itemtype="http://schema.org/Organization">
 
 
     <button class="menu-button animated fade dosearch">
@@ -127,39 +153,101 @@
                     <header class="post-header entry-header">
                     
                         
-                        <h1 class="post-title text-center hyper  bordered-bottom entry-title" itemprop="headline">回忆杭州之西溪湿地</h1>
+                        <h1 class="post-title text-center hyper  bordered-bottom entry-title" itemprop="headline">Install VPN on Raspberry Pi</h1>
                         
-                        <div class="cursive" style="color: #000; font-style:italic;">往事如风</div>
+                        <div class="cursive" style="color: #000; font-style:italic;"></div>
                         <div class="post-info text-center small">
-                            <span class="entry-date date published updated"><time datetime="2016-04-20T00:00:00-06:00" class="post-time" itemprop="datePublished">20 Apr 2016</time><span>
+                            <span class="entry-date date published updated"><time datetime="2016-05-16T00:00:00-06:00" class="post-time" itemprop="datePublished">16 May 2016</time><span>
                             in <span class="post-tags"><a href="/categories/index.html#personal" data-toggle="tooltip" title="Other posts from the Personal category" rel="tag">Personal</a></span>
                         </div>
                     </header>
                     <div class="post-body bordered-bottom" itemprop="description">
                         
-                        <p>(陈年老货，写于2009年1月8日）</p>
+                        <p>I bought a Raspberry Pi B+ model with starter kit. It includes a case, which nicely fits the raspberry pi. It also contains a 8GB microsd card with NOOBS preinstalled. So I can skip installing NOOBS on microsd card. My purpose is to setup a vpn network at my home so that I can use it when I am outside. It is more secure than using public wifi network.</p>
 
-<p>最近常常回想起在杭州的生活。两年的研究生生活相当的轻松安逸。我去过的城市里面就数杭州最好了。有山有水，山上常常还有古庙，很有氛围。</p>
+<figure>
+        <a href="/images/gallery1/b-plus.jpg"><img src="/images/gallery1/b-plus.jpg" /></a>
+</figure>
 
-<p>比起Boulder光秃秃的山来多了几分灵秀。 而杭州的西湖，灵隐寺，虎跑，六和塔，岳王庙，于谦祠等等等等，名胜繁多。只要办了公园卡和寺庙卡，就基本上畅通无阻了。
-记得随便经过一处不起眼的地方时候，发现牌子上面说那是梁山伯与祝英台读书的地方。</p>
+<section id="table-of-contents" class="toc">
+  <header>
+    <h1>Install Guildance</h1>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#install-raspbian-and-related-softwares" id="markdown-toc-install-raspbian-and-related-softwares">Install Raspbian and related softwares</a></li>
+  <li><a href="#network-configuration" id="markdown-toc-network-configuration">Network configuration</a></li>
+  <li><a href="#configure-openvpn-server-and-client" id="markdown-toc-configure-openvpn-server-and-client">Configure OpenVPN server and client</a></li>
+</ul>
 
-<p>西溪湿地算是国家自然保护区。现在地球上湿地锐减，生态环境破坏相当严重了。据说再过几年不好转的话，可能自然就调节不过来，产生不过逆转的效应了。那人类估计就遇到真正的危机了。</p>
+  </div>
+</section>
+<!-- /#table-of-contents -->
 
-<p>题外话说过。西溪湿地去过多次了，还比较大，走一圈要几个小时。那里除了风景很好以外，还有个特点是有很多东西可以随便吃。以前中学课本里鲁迅的从百草园到三味书屋
-里面就提到了桑椹，覆盆子，何首乌。记得那一段好像还必须背诵的。大概四五月吧， 就可以去摘了。桑椹在树上，紫色的一串一串很好辨认，而熟透了的桑椹则会掉的满地都是，
-把地都染上很多紫色的斑点。覆盆子和草莓很相似，不过麻烦些，长在 地上，常常被草遮住，只找到很少。我见过很过分的人，装了满满一袋的桑椹。我还见过有一对老夫妻再采金银花。 
-还有没有熟透的油桃和石榴等。这几个就没有等到过合适的时节了。</p>
+<h2 id="install-raspbian-and-related-softwares">Install Raspbian and related softwares</h2>
+<p>The first step is to install the operating system on raspberry pi. Plug in keyboard, mouse and microsd card, connect hdmi cable with monitor. After plug in the power, it will automatically start with several options. I choose to install the Raspbian operating system at the start up page. It will take about 20 mins to finish installing the operating system. The default login is the command line enviroment. To start the GUI, just type “startx” in the terminal.
+Now we can access RPI(Raspberry Pi) remotely using ssh. In order to use remote desktop service from PC, we need to install xrdp in RPI, it will install the dependency tigervncserver as well.</p>
 
-<p>之所以第一篇就写湿地，是因为有两次我确切的记得去的时间。正好那天是5月12日。当时爸爸突然发来一条短信问我那边怎么样。我当时没有察觉出奇怪的地方，说很好。
-后来回去才知道家乡发生大地震。而一周后，我又怀着复杂的心情来到湿地，等待两点28分的鸣笛。远远的听到汽车的笛声的哀鸣传来，虽然很远也挡不住。</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install xrdp <span class="o">(</span><span class="k">for </span>remote desktop access<span class="o">)</span> 
+sudo update-rc.d xrdp <span class="nb">enable</span> <span class="o">(</span><span class="nb">enable </span>it at boot<span class="o">)</span></code></pre></figure>
+
+<p>Since most of the home network use dynamic ip, we need to update our ip with the free dns domain name we get from some online provider. I choose the noip, I download linux version noip software (for dynamic dns service), use make and sudo make install to install the software. The last software to install is the openvpn.</p>
+
+<h2 id="network-configuration">Network configuration</h2>
+<p>The ip address of RPI can be found using ifconfig command. If I am using my laptop remotely, I can use nmap to scan the available ip and find it (in my case, it is 192.168.0.8).</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">nmap -sP 192.168.0.0/24</code></pre></figure>
+
+<p>To make this internal ip static, first step is to configure the home router to make a dhcp reservation for my RPI ip address(i.e. reserve a internal ip for RPI). Then, change the interface file located in /etc/network/interfaces. Use ifconfig(ip address, netmask, broadcast address) and netstat -nr(network,gateway) to find all the information and put it there.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+    address 192.168.0.8
+    netmask 255.255.255.0
+    network 192.168.0.0
+    broadcast 192.168.0.255
+    gateway 192.168.0.1</code></pre></figure>
+
+<p>Now we have a fixed internal ip address to connect. However, if we want to connect to RPI outside home, we need has a static ip address. Unfortunately, my home ip is dynamic ip. After some search online, I found noip is a good choice to host the dynamic dns. It provided me a dynamic hostname. First, I registered a free dns hostname on noip website. Then I installed its linux version software Dynamic Update Client (noip2) on my RPI. With some simple configuration, it will update my dynamic ip to the dns server every 30s(you can change the value). Thus, when I ssh to my RPI remotely, I can use the registered dns hostname instead of the dynamic ip address.</p>
+
+<p>By default, Raspbian does not forward internet traffic. To enable it:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>vi /etc/sysctl.conf
+net.ipv4.ip_forward<span class="o">=</span>1 <span class="o">(</span>uncomment this line<span class="o">)</span>
+<span class="gp">$ </span>sysctl -p <span class="o">(</span>configure kernel parameters at runtime, -p means reload<span class="o">)</span></code></pre></figure>
+
+<p>RPI has a build-in firewall that will block incoming connections. We need open an hole for OpenVPN in the firewall.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>vi /etc/firewall-openvpn-rules.sh
+<span class="c">#! /bin/sh</span>
+iptables -t nat -A POSTROUTING -s 10.20.30.0/24 -o eth0 -j SNAT --to-source 192.168.0.8</code></pre></figure>
+
+<p>The first ip is the start ip that I chose for VPN subnet, the second is the internal ip of RPI. Next, we put it into the interfaces setup code so it runs on boot.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>chmod 700 /etc/firewall-openvpn-rules.sh
+<span class="gp">$ </span>vi /etc/network/interfaces
+auto eth0
+iface eth0 inet static
+    pre-up /etc/firewall-openvpn-rules.sh<span class="o">(</span>add this line<span class="o">)</span></code></pre></figure>
+
+<h2 id="configure-openvpn-server-and-client">Configure OpenVPN server and client</h2>
+<p>There are two major steps. The first is to create the master certificate, server certificate, client certificate, and the private keys. Please follow the following two tutorials <a href="http://readwrite.com/2014/04/10/raspberry-pi-vpn-tutorial-server-secure-web-browsing/">rpi-vpn-tutorial</a> and <a href="https://openvpn.net/index.php/open-source/documentation/howto.html">openvpn-documentation</a>. To create diffie-hellman key with size 2048, RPI will take about 3~4 hours to find a large prime number with 2048 bits. The easier way is to find such a key on your desktop or laptop and copy it onto RPI, this approach will be much faster. The dh pem file can be created by the following command</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">openssl dhparam -out dh2048.pem 2048</code></pre></figure>
+
+<p>Actually, even 2048 bit is not secure enough nowadays. However, I just use it for myself. The most secure method is not to leak the domain name to other people. 
+The second step is to write configuraion files for server and client. The tutorials mentioned above have the template available.</p>
+
 
                         <br>
                     
                     
                     <div class="entry-tags text-center">
                     
-                        <i class="icon-tags"></i>&nbsp;Tagged with <a href="/tags/index.html#杭州" data-toggle="tooltip" title="Posts tagged with 杭州" rel="tag">杭州</a>&nbsp;&bull;&nbsp;<a href="/tags/index.html#blog" data-toggle="tooltip" title="Posts tagged with blog" rel="tag">blog</a>
+                        <i class="icon-tags"></i>&nbsp;Tagged with <a href="/tags/index.html#raspberry pi" data-toggle="tooltip" title="Posts tagged with raspberry pi" rel="tag">raspberry pi</a>&nbsp;&bull;&nbsp;<a href="/tags/index.html#vpn" data-toggle="tooltip" title="Posts tagged with vpn" rel="tag">vpn</a>
                     
                     </div>
                     
@@ -178,7 +266,7 @@
     </div>
 </div>
 
-<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(/images/hangzhouxixi.jpg)" >
+<footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(/images/raspberry-pi.jpg)" >
 
 
     <div class="inner">

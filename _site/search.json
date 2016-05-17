@@ -1,9 +1,17 @@
 [
 	
 		{
+		  "title"      : "Install VPN on Raspberry Pi",
+		  "category"   : "",
+		  "url"        : "/personal/vpn-on-raspberry-pi",
+		  "date"       : "2016-05-16 00:00:00 -0600",
+		  "shortdate"  : "May 16, 2016"
+		} ,
+	
+		{
 		  "title"      : "回忆杭州之西溪湿地",
 		  "category"   : "",
-		  "url"        : "http://chaosma.github.io/personal/hangzhou-xixi",
+		  "url"        : "/personal/hangzhou-xixi",
 		  "date"       : "2016-04-20 00:00:00 -0600",
 		  "shortdate"  : "April 20, 2016"
 		} ,
@@ -11,7 +19,7 @@
 		{
 		  "title"      : "First Commit",
 		  "category"   : "",
-		  "url"        : "http://chaosma.github.io/personal/first-commit",
+		  "url"        : "/personal/first-commit",
 		  "date"       : "2016-04-18 00:00:00 -0600",
 		  "shortdate"  : "April 18, 2016"
 		} 

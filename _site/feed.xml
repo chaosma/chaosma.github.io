@@ -2,26 +2,120 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Chao</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://chaosma.github.io/feed.xml" />
-<link rel="alternate" type="text/html" href="http://chaosma.github.io" />
-<updated>2016-04-20T22:04:14-06:00</updated>
-<id>http://chaosma.github.io/</id>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2016-05-16T23:51:28-06:00</updated>
+<id>/</id>
 <author>
   <name>Chao</name>
-  <uri>http://chaosma.github.io/</uri>
+  <uri>/</uri>
   <email>mc8305@gmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[Install VPN on Raspberry Pi]]></title>
+  <link>/personal/vpn-on-raspberry-pi</link>
+  <id>/personal/vpn-on-raspberry-pi</id>
+  <published>2016-05-16T00:00:00-06:00</published>
+  <updated>2016-05-16T00:00:00-06:00</updated>
+  <author>
+    <name>Chao</name>
+    <uri></uri>
+    <email>mc8305@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;I bought a Raspberry Pi B+ model with starter kit. It includes a case, which nicely fits the raspberry pi. It also contains a 8GB microsd card with NOOBS preinstalled. So I can skip installing NOOBS on microsd card. My purpose is to setup a vpn network at my home so that I can use it when I am outside. It is more secure than using public wifi network.&lt;/p&gt;
+
+&lt;figure&gt;
+        &lt;a href=&quot;/images/gallery1/b-plus.jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/b-plus.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Install Guildance&lt;/h1&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-raspbian-and-related-softwares&quot; id=&quot;markdown-toc-install-raspbian-and-related-softwares&quot;&gt;Install Raspbian and related softwares&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#network-configuration&quot; id=&quot;markdown-toc-network-configuration&quot;&gt;Network configuration&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#configure-openvpn-server-and-client&quot; id=&quot;markdown-toc-configure-openvpn-server-and-client&quot;&gt;Configure OpenVPN server and client&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;h2 id=&quot;install-raspbian-and-related-softwares&quot;&gt;Install Raspbian and related softwares&lt;/h2&gt;
+&lt;p&gt;The first step is to install the operating system on raspberry pi. Plug in keyboard, mouse and microsd card, connect hdmi cable with monitor. After plug in the power, it will automatically start with several options. I choose to install the Raspbian operating system at the start up page. It will take about 20 mins to finish installing the operating system. The default login is the command line enviroment. To start the GUI, just type “startx” in the terminal.
+Now we can access RPI(Raspberry Pi) remotely using ssh. In order to use remote desktop service from PC, we need to install xrdp in RPI, it will install the dependency tigervncserver as well.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install xrdp &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;remote desktop access&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+sudo update-rc.d xrdp &lt;span class=&quot;nb&quot;&gt;enable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;it at boot&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Since most of the home network use dynamic ip, we need to update our ip with the free dns domain name we get from some online provider. I choose the noip, I download linux version noip software (for dynamic dns service), use make and sudo make install to install the software. The last software to install is the openvpn.&lt;/p&gt;
+
+&lt;h2 id=&quot;network-configuration&quot;&gt;Network configuration&lt;/h2&gt;
+&lt;p&gt;The ip address of RPI can be found using ifconfig command. If I am using my laptop remotely, I can use nmap to scan the available ip and find it (in my case, it is 192.168.0.8).&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;nmap -sP 192.168.0.0/24&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To make this internal ip static, first step is to configure the home router to make a dhcp reservation for my RPI ip address(i.e. reserve a internal ip for RPI). Then, change the interface file located in /etc/network/interfaces. Use ifconfig(ip address, netmask, broadcast address) and netstat -nr(network,gateway) to find all the information and put it there.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+    address 192.168.0.8
+    netmask 255.255.255.0
+    network 192.168.0.0
+    broadcast 192.168.0.255
+    gateway 192.168.0.1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now we have a fixed internal ip address to connect. However, if we want to connect to RPI outside home, we need has a static ip address. Unfortunately, my home ip is dynamic ip. After some search online, I found noip is a good choice to host the dynamic dns. It provided me a dynamic hostname. First, I registered a free dns hostname on noip website. Then I installed its linux version software Dynamic Update Client (noip2) on my RPI. With some simple configuration, it will update my dynamic ip to the dns server every 30s(you can change the value). Thus, when I ssh to my RPI remotely, I can use the registered dns hostname instead of the dynamic ip address.&lt;/p&gt;
+
+&lt;p&gt;By default, Raspbian does not forward internet traffic. To enable it:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;vi /etc/sysctl.conf
+net.ipv4.ip_forward&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;uncomment this line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sysctl -p &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;configure kernel parameters at runtime, -p means reload&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;RPI has a build-in firewall that will block incoming connections. We need open an hole for OpenVPN in the firewall.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;vi /etc/firewall-openvpn-rules.sh
+&lt;span class=&quot;c&quot;&gt;#! /bin/sh&lt;/span&gt;
+iptables -t nat -A POSTROUTING -s 10.20.30.0/24 -o eth0 -j SNAT --to-source 192.168.0.8&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The first ip is the start ip that I chose for VPN subnet, the second is the internal ip of RPI. Next, we put it into the interfaces setup code so it runs on boot.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;chmod 700 /etc/firewall-openvpn-rules.sh
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;vi /etc/network/interfaces
+auto eth0
+iface eth0 inet static
+    pre-up /etc/firewall-openvpn-rules.sh&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;add this line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;configure-openvpn-server-and-client&quot;&gt;Configure OpenVPN server and client&lt;/h2&gt;
+&lt;p&gt;There are two major steps. The first is to create the master certificate, server certificate, client certificate, and the private keys. Please follow the following two tutorials &lt;a href=&quot;http://readwrite.com/2014/04/10/raspberry-pi-vpn-tutorial-server-secure-web-browsing/&quot;&gt;rpi-vpn-tutorial&lt;/a&gt; and &lt;a href=&quot;https://openvpn.net/index.php/open-source/documentation/howto.html&quot;&gt;openvpn-documentation&lt;/a&gt;. To create diffie-hellman key with size 2048, RPI will take about 3~4 hours to find a large prime number with 2048 bits. The easier way is to find such a key on your desktop or laptop and copy it onto RPI, this approach will be much faster. The dh pem file can be created by the following command&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;openssl dhparam -out dh2048.pem 2048&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Actually, even 2048 bit is not secure enough nowadays. However, I just use it for myself. The most secure method is not to leak the domain name to other people. 
+The second step is to write configuraion files for server and client. The tutorials mentioned above have the template available.&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;/personal/vpn-on-raspberry-pi&quot;&gt;Install VPN on Raspberry Pi&lt;/a&gt; was originally published by Chao at &lt;a href=&quot;&quot;&gt;Chao&lt;/a&gt; on May 16, 2016.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[回忆杭州之西溪湿地]]></title>
-  <link>http://chaosma.github.io/personal/hangzhou-xixi</link>
-  <id>http://chaosma.github.io/personal/hangzhou-xixi</id>
+  <link>/personal/hangzhou-xixi</link>
+  <id>/personal/hangzhou-xixi</id>
   <published>2016-04-20T00:00:00-06:00</published>
   <updated>2016-04-20T00:00:00-06:00</updated>
   <author>
     <name>Chao</name>
-    <uri>http://chaosma.github.io</uri>
+    <uri></uri>
     <email>mc8305@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;(陈年老货，写于2009年1月8日）&lt;/p&gt;
@@ -41,19 +135,19 @@
 &lt;p&gt;之所以第一篇就写湿地，是因为有两次我确切的记得去的时间。正好那天是5月12日。当时爸爸突然发来一条短信问我那边怎么样。我当时没有察觉出奇怪的地方，说很好。
 后来回去才知道家乡发生大地震。而一周后，我又怀着复杂的心情来到湿地，等待两点28分的鸣笛。远远的听到汽车的笛声的哀鸣传来，虽然很远也挡不住。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://chaosma.github.io/personal/hangzhou-xixi&quot;&gt;回忆杭州之西溪湿地&lt;/a&gt; was originally published by Chao at &lt;a href=&quot;http://chaosma.github.io&quot;&gt;Chao&lt;/a&gt; on April 20, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/personal/hangzhou-xixi&quot;&gt;回忆杭州之西溪湿地&lt;/a&gt; was originally published by Chao at &lt;a href=&quot;&quot;&gt;Chao&lt;/a&gt; on April 20, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[First Commit]]></title>
-  <link>http://chaosma.github.io/personal/first-commit</link>
-  <id>http://chaosma.github.io/personal/first-commit</id>
+  <link>/personal/first-commit</link>
+  <id>/personal/first-commit</id>
   <published>2016-04-18T00:00:00-06:00</published>
   <updated>2016-04-18T00:00:00-06:00</updated>
   <author>
     <name>Chao</name>
-    <uri>http://chaosma.github.io</uri>
+    <uri></uri>
     <email>mc8305@gmail.com</email>
   </author>
   <content type="html">&lt;blockquote&gt;
@@ -145,11 +239,11 @@
 &lt;p&gt;Now, comes to image:&lt;/p&gt;
 
 &lt;figure&gt;
-        &lt;a href=&quot;http://chaosma.github.io/images/gallery1/shahua.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io/images/gallery1/shahua.jpg&quot; /&gt;&lt;/a&gt;
+        &lt;a href=&quot;/images/gallery1/shahua.jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/shahua.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 &lt;figure class=&quot;half&quot;&gt;
-        &lt;a href=&quot;http://chaosma.github.io/images/gallery1/IMG059.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io/images/gallery1/IMG059.jpg&quot; /&gt;&lt;/a&gt;
-        &lt;a href=&quot;http://chaosma.github.io/images/gallery1/IMG072.jpg&quot;&gt;&lt;img src=&quot;http://chaosma.github.io/images/gallery1/IMG072.jpg&quot; /&gt;&lt;/a&gt;
+        &lt;a href=&quot;/images/gallery1/IMG059.jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/IMG059.jpg&quot; /&gt;&lt;/a&gt;
+        &lt;a href=&quot;/images/gallery1/IMG072.jpg&quot;&gt;&lt;img src=&quot;/images/gallery1/IMG072.jpg&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
 &lt;hr /&gt;
@@ -197,7 +291,7 @@
   &lt;/ol&gt;
 &lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://chaosma.github.io/personal/first-commit&quot;&gt;First Commit&lt;/a&gt; was originally published by Chao at &lt;a href=&quot;http://chaosma.github.io&quot;&gt;Chao&lt;/a&gt; on April 18, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/personal/first-commit&quot;&gt;First Commit&lt;/a&gt; was originally published by Chao at &lt;a href=&quot;&quot;&gt;Chao&lt;/a&gt; on April 18, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>
