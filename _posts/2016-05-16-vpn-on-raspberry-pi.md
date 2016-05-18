@@ -95,7 +95,7 @@ Actually, even 2048 bit is not secure enough nowadays. However, I just use it fo
 The second step is to write configuraion files for server and client. The tutorials mentioned above have the template available.
 
 ## Debug for client connection issues ##
-The most common error is TLS key negotiation failed to occur with 60 seconds. There are many possible reasons:
+The most common error when trying to connect to the server is "TLS key negotiation failed to occur with 60 seconds". There are many possible reasons:
 
 * A perimeter firewall on the server's network is filtering out incoming OpenVPN packets (by default OpenVPN uses UDP or TCP port number 1194).
 * A software firewall running on the OpenVPN server machine itself is filtering incoming connections on port 1194. Be aware that many OSes will block incoming connections by default, unless configured otherwise.
@@ -103,12 +103,13 @@ The most common error is TLS key negotiation failed to occur with 60 seconds. Th
 * The OpenVPN client config does not have the correct server address in its config file. The remote directive in the client config file must point to either the server itself or the public IP address of the server network's gateway.
 * Another possible cause is that the windows firewall is blocking access for the openvpn.exe binary. You may need to whitelist (add it to the "Exceptions" list) it for OpenVPN to work.
 
-Follow the guidance, we can make sure the RPI firewall not block the vpn connection and the gateway router will forward the TCP/UDP traffic on port 1194. The most possible cause is the perimeter firewall which beyond our ability. Actually, 
-we can use tcpdump to check any network traffic with udp (or tcp) and port 1194 on the server.
+Following the guidance, we can make sure the RPI firewall is not blocking the vpn connection and the gateway router will forward the TCP/UDP traffic on port 1194(or other port depending on our choice). 
+The most common reason is the perimeter firewall by the home ISP or company firewall or whatever. 
+We can use tcpdump to check whether there have network traffic with udp (or tcp) and port 1194 on the server side.
 {% highlight bash %}
 tcpdump -ni eth0 udp and port 1194
 {% endhighlight %}
-I found there is no packets detected. I also change the "remote my.public.dns" to "remote 192.168.0.8" in the client1.ovpn, and test it in local network. There is no blocking. Thus, the problem is there are some firewall blocking the traffic. We can change the port to 443, which is the SSL port to avoid the firewall blocking. 
+I found there is no packets detected when I tested the client outside home network. After I got home, I changed the "remote my.public.dns" to "remote 192.168.0.8" in the client1.ovpn, and test it in my local network at home. Everything works fine. There must be some firewall blocking the traffic. To avoid blocking, we can change the port to 443, which is the SSL port. 
 
 
 Another error is "Linux route add command failed: external program exited with error status: 2". It turned out I need to remove the following 3 lines:
