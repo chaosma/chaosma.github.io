@@ -129,5 +129,13 @@ Finally, we can test our VPN from outside:
     traceroute www.google.com (client side to check if the vpn take effect)
     netstat -r (another way to check)
 
+Some comments on verbose level in the configure file:
 
+* 0 -- No output except fatal errors.
+* 1 to 4 -- Normal usage range.
+* 5 -- Output R and W characters to the console for each packet read and 
+write, uppercase is used for TCP/UDP packets and lowercase is used for 
+TUN/TAP packets.
+* 6 to 11 -- Debug info range (see errlevel.h for additional information on 
+debug levels). 
 
