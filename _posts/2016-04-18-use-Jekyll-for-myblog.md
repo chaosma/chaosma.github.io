@@ -131,6 +131,12 @@ $$\begin{align}
 <br>
 
 
+## change vim highlight style ##
+When I use vim editor to create post file (ending with .md), it will highlight everything after single quote to be red. It's very annoying. In vim, use ":set syntax" to check the style is 
+modula2. To fix this problem, ":set filetype=markdown.pandoc". Now, there is no red highlighting anymore. World is peaceful again.
+  
+
+
 ---
 
 Here you go.
