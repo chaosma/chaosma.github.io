@@ -3,7 +3,7 @@ layout: post
 title: Install VPN on Raspberry Pi
 description: 
 headline: 
-categories: personal
+categories: Network
 tags: 
   - raspberry pi
   - vpn
