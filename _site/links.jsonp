@@ -12,7 +12,7 @@ callback([
 
   {
     "text": "Install VPN on Raspberry Pi",
-    "href": "/personal/vpn-on-raspberry-pi"
+    "href": "/network/vpn-on-raspberry-pi"
   } 
 
 ])
