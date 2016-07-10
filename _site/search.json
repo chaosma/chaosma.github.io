@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Reinforcement learning on Tic-Tac-Toe",
+		  "category"   : "",
+		  "url"        : "/ai/RL-tictactoe",
+		  "date"       : "2016-07-09 00:00:00 -0600",
+		  "shortdate"  : "July 09, 2016"
+		} ,
+	
+		{
 		  "title"      : "Install VPN on Raspberry Pi",
 		  "category"   : "",
 		  "url"        : "/network/vpn-on-raspberry-pi",

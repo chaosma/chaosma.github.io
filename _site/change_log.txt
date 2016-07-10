@@ -37,3 +37,7 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+8. get rid of leading paragraph has the different font size and weight
+   In assets/js/script.js, comment out
+   // $('.post-body p:first-child').addClass('lead');
+

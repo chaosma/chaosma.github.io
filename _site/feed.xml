@@ -4,13 +4,52 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-06-27T16:01:27-06:00</updated>
+<updated>2016-07-10T01:25:48-06:00</updated>
 <id>/</id>
 <author>
   <name>Chao</name>
   <uri>/</uri>
   <email>mc8305@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Reinforcement learning on Tic-Tac-Toe]]></title>
+  <link>/ai/RL-tictactoe</link>
+  <id>/ai/RL-tictactoe</id>
+  <published>2016-07-09T00:00:00-06:00</published>
+  <updated>2016-07-09T00:00:00-06:00</updated>
+  <author>
+    <name>Chao</name>
+    <uri></uri>
+    <email>mc8305@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;Tic tac toe is a simple game, but it’s a good illustration for the reinforcement learning algorithm. I compared two algorithms: epsilon greedy algorithm and first visit Monte Carlo(FSMC) method.&lt;/p&gt;
+
+&lt;p&gt;In Sutto’s book, Chapter 1 introduced the epsilon greedy algorithm to learn the tic tac toe game. The agent contains a lookup table that for each state, it initially assigns a value that 1 for win state, 0 for draw state, -1 for loss state, 0.5 for otherwise. The epsilon greedy means for every move, the agent choose the maximum-value move(greedy) with probability 1-epsilon and random move(exploratory) with probability epsilon. The agent updates its value lookup table after each episode(game) using the following equation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;V(s) \leftarrow (1-\alpha)*V(s) + \alpha*V(s&#39;)&lt;/script&gt;
+
+&lt;p&gt;This algorithm use the state after a move to update the state before the move. Thus the value of the states will be back traced from the ending state(win,lose,draw). However, the training speed of this algorithm is slow. Another way is to using the returns of each episode to update the state value instead of the next state. I trained the epsilon greedy agent and FSMC agent with random player with 200000 episodes, and for both situations i.e. the agent play first or second. Then I measured the wining rate for them. Here is the result:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FSMC play first:
+
+FSMC win | epsilon greedy win   | draw
+0.8987   | 0.0290              | 0.0723
+
+
+epsilon greedy play first:
+
+epsilon greedy win | FSMC win | draw
+0.0317             | 0.8068   | 0.1615
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As we can see, the FSMC has a much higher winning rate comparing with epsilon greedy. I uploaded the code to my github for reference.&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;/ai/RL-tictactoe&quot;&gt;Reinforcement learning on Tic-Tac-Toe&lt;/a&gt; was originally published by Chao at &lt;a href=&quot;&quot;&gt;Chao&lt;/a&gt; on July 09, 2016.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>

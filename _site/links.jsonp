@@ -13,6 +13,11 @@ callback([
   {
     "text": "Install VPN on Raspberry Pi",
     "href": "/network/vpn-on-raspberry-pi"
+  } ,
+
+  {
+    "text": "Reinforcement learning on Tic-Tac-Toe",
+    "href": "/ai/RL-tictactoe"
   } 
 
 ])

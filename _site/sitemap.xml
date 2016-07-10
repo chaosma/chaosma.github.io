@@ -13,6 +13,10 @@
     
     
     <url>
+        <loc>/ai/RL-tictactoe</loc>
+    </url>
+    
+    <url>
         <loc>/network/vpn-on-raspberry-pi</loc>
     </url>
     

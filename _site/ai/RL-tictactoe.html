@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Featured Posts &#8211; Chao</title>
-<meta name="description" content="An archive of posts sorted by date.">
-
+<title>Reinforcement learning on Tic-Tac-Toe &#8211; Chao</title>
+<meta name="description" content="Nothing is really attained">
+<meta name="keywords" content="AI, reinforcement_learning">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="/images/moon-logo.png">
-<meta name="twitter:title" content="Featured Posts">
-<meta name="twitter:description" content="An archive of posts sorted by date.">
+<meta name="twitter:title" content="Reinforcement learning on Tic-Tac-Toe">
+<meta name="twitter:description" content="Nothing is really attained">
 <meta name="twitter:creator" content="@ohmygoddess2">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Featured Posts">
-<meta property="og:description" content="An archive of posts sorted by date.">
-<meta property="og:url" content="/featured/">
+<meta property="og:title" content="Reinforcement learning on Tic-Tac-Toe">
+<meta property="og:description" content="Nothing is really attained">
+<meta property="og:url" content="/ai/RL-tictactoe">
 <meta property="og:site_name" content="Chao">
 <meta property="og:image" content="/images/default_bg1.jpg">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="/featured/">
+<link rel="canonical" href="/ai/RL-tictactoe">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chao Feed">
 
 
@@ -48,6 +48,32 @@
 </div><!-- ./search-wrapper -->
 
 
+<!--Load Mathjax-->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
 
 
 <!-- Icons -->
@@ -65,7 +91,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
 
 </head>
-<body class="home-template" itemscope itemtype="http://schema.org/WebPage">
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
 <div id="fade"></div>
 <a id="slide" class="animated fade"></a>
 <aside id="sidebar">
@@ -117,27 +143,74 @@
     
     
 </header>
-<div id="main" class="content" role="main" itemprop="mainContentOfPage">
+<div id="main" class="content" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
     <div class="container">
         <div class="row">
-            <div class="page-body col-md-10 col-md-offset-1" itemprop="description">
-                <ul class="post-list">
+            <article class="post col-md-8 col-md-offset-2 hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            
+            
+            
+                    <header class="post-header entry-header">
+                    
+                        
+                        <h1 class="post-title text-center hyper  bordered-bottom entry-title" itemprop="headline">Reinforcement learning on Tic-Tac-Toe</h1>
+                        
+                        <div class="cursive" style="color: #000; font-style:italic;"></div>
+                        <div class="post-info text-center small">
+                            <span class="entry-date date published updated"><time datetime="2016-07-09T00:00:00-06:00" class="post-time" itemprop="datePublished">09 Jul 2016</time><span>
+                            in <span class="post-tags"><a href="/categories/index.html#AI" data-toggle="tooltip" title="Other posts from the Ai category" rel="tag">Ai</a></span>
+                        </div>
+                    </header>
+                    <div class="post-body bordered-bottom" itemprop="description">
+                        
+                        <p>Tic tac toe is a simple game, but it’s a good illustration for the reinforcement learning algorithm. I compared two algorithms: epsilon greedy algorithm and first visit Monte Carlo(FSMC) method.</p>
+
+<p>In Sutto’s book, Chapter 1 introduced the epsilon greedy algorithm to learn the tic tac toe game. The agent contains a lookup table that for each state, it initially assigns a value that 1 for win state, 0 for draw state, -1 for loss state, 0.5 for otherwise. The epsilon greedy means for every move, the agent choose the maximum-value move(greedy) with probability 1-epsilon and random move(exploratory) with probability epsilon. The agent updates its value lookup table after each episode(game) using the following equation:</p>
+
+<script type="math/tex; mode=display">V(s) \leftarrow (1-\alpha)*V(s) + \alpha*V(s')</script>
+
+<p>This algorithm use the state after a move to update the state before the move. Thus the value of the states will be back traced from the ending state(win,lose,draw). However, the training speed of this algorithm is slow. Another way is to using the returns of each episode to update the state value instead of the next state. I trained the epsilon greedy agent and FSMC agent with random player with 200000 episodes, and for both situations i.e. the agent play first or second. Then I measured the wining rate for them. Here is the result:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>FSMC play first:
+
+FSMC win | epsilon greedy win   | draw
+0.8987   | 0.0290              | 0.0723
 
 
+epsilon greedy play first:
+
+epsilon greedy win | FSMC win | draw
+0.0317             | 0.8068   | 0.1615
+</code></pre>
+</div>
+
+<p>As we can see, the FSMC has a much higher winning rate comparing with epsilon greedy. I uploaded the code to my github for reference.</p>
 
 
-
-
-
-
-
-</ul>
-
-            </div>    
+                        <br>
+                    
+                    
+                    <div class="entry-tags text-center">
+                    
+                        <i class="icon-tags"></i>&nbsp;Tagged with <a href="/tags/index.html#AI" data-toggle="tooltip" title="Posts tagged with AI" rel="tag">AI</a>&nbsp;&bull;&nbsp;<a href="/tags/index.html#reinforcement_learning" data-toggle="tooltip" title="Posts tagged with reinforcement_learning" rel="tag">reinforcement_learning</a>
+                    
+                    </div>
+                    
+                    </div>
         </div>
+                    <footer class="post-footer entry-meta">
+                        
+                        <div class="post-author text-center">                       
+	        <img src="/images/doraemon.gif" alt="Chao's photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
+	    <h4 class="bordered-bottom vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="/about" title="About Chao" itemprop="url">Chao</a></span></h4>
+	    <p></p>
+</div> 
+                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                    </footer>
+            </article>
     </div>
 </div>
-    
+
 <footer id="footer"  class="blog-background overlay text-center align-middle animated from-top" style="background-image: url(/images/default_bg1.jpg)" >
 
 
@@ -197,6 +270,7 @@
 </footer>
 
 
+    
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 <script src="/assets/js/scripts.min.js"></script>
@@ -285,6 +359,25 @@ $("a#click-pages").click(function(){
   })();
 </script>
 
-  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'chaosma'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
 </body>
 </html>
