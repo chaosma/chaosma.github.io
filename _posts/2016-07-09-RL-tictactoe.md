@@ -19,7 +19,11 @@ In Sutto's book, Chapter 1 introduced the epsilon greedy algorithm to learn the 
 $$ V(s) \leftarrow (1-\alpha)*V(s) + \alpha*V(s')$$
 
 
-This algorithm use the state after a move to update the state before the move. Thus the value of the states will be back traced from the ending state(win,lose,draw). However, the training speed of this algorithm is slow. Another way is to using the returns of each episode to update the state value instead of the next state. I trained the epsilon greedy agent and FSMC agent with random player with 200000 episodes, and for both situations i.e. the agent play first or second. Then I measured the wining rate for them. Here is the result:
+This algorithm use the state after a move to update the state before the move. Thus the value of the states will be back traced from the ending state(win,lose,draw). However, the training speed of this algorithm is slow. Another way is to using the returns of each episode to update the state value instead of the next state. 
+
+$$ V(s) \leftarrow (1-\alpha)*V(s) + \alpha*episode_returns $$
+
+I trained the epsilon greedy agent and FSMC agent with random player with 200000 episodes, and for both situations i.e. the agent play first or second. Then I measured the wining rate for them. Here is the result:
 
 
     FSMC play first:
