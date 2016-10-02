@@ -139,3 +139,37 @@ TUN/TAP packets.
 * 6 to 11 -- Debug info range (see errlevel.h for additional information on 
 debug levels). 
 
+## Use Shadowsocks
+openvpn is easy to be blocked because when we try to connect openvpn server, the respond message contains openvpn header which is easy to detect. But shadowsocks will ignore such requests. shadowsocks is also easier to configure.
+
+* Install shadowsocks
+{% highlight bash %}
+pip install shadowsocks
+{% endhighlight %}
+* configure shadowsocks(e.g. paste the following into /etc/shadowsocks.json in both client and server computers)
+{% highlight bash %}
+{
+    "server":"server_ip_address",
+    "server_port":8000,
+    "local_address":"127.0.0.1",
+    "local_port":1080,
+    "password":"your_password",
+    "timeout":300,
+    "method":"aes-256-cfb"
+}
+{% endhighlight %}
+* start server and client
+{% highlight bash %}
+in server pc>
+ssserver -c /etc/shadowsocks.json -d start 
+(to stop, just change "start" to "stop")
+in client pc>
+sslocal -c /etc/shadowsocks.json
+{% endhighlight %}
+
+* autostart the service
+{% highlight bash %}
+vi /etc/rc.local
+(put this line before exit 0)
+/usr/bin/python /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start
+{% endhighlight %}

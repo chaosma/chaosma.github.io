@@ -179,6 +179,7 @@
   <li><a href="#network-configuration" id="markdown-toc-network-configuration">Network configuration</a></li>
   <li><a href="#configure-openvpn-server-and-client" id="markdown-toc-configure-openvpn-server-and-client">Configure OpenVPN server and client</a></li>
   <li><a href="#debug-for-client-connection-issues" id="markdown-toc-debug-for-client-connection-issues">Debug for client connection issues</a></li>
+  <li><a href="#use-shadowsocks" id="markdown-toc-use-shadowsocks">Use Shadowsocks</a></li>
 </ul>
 
   </div>
@@ -292,6 +293,47 @@ TUN/TAP packets.</li>
   <li>6 to 11 – Debug info range (see errlevel.h for additional information on 
 debug levels).</li>
 </ul>
+
+<h2 id="use-shadowsocks">Use Shadowsocks</h2>
+<p>openvpn is easy to be blocked because when we try to connect openvpn server, the respond message contains openvpn header which is easy to detect. But shadowsocks will ignore such requests. shadowsocks is also easier to configure.</p>
+
+<ul>
+  <li>Install shadowsocks</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pip install shadowsocks</code></pre></figure>
+
+<ul>
+  <li>configure shadowsocks(e.g. paste the following into /etc/shadowsocks.json in both client and server computers)</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
+    <span class="s2">"server"</span>:<span class="s2">"server_ip_address"</span>,
+    <span class="s2">"server_port"</span>:8000,
+    <span class="s2">"local_address"</span>:<span class="s2">"127.0.0.1"</span>,
+    <span class="s2">"local_port"</span>:1080,
+    <span class="s2">"password"</span>:<span class="s2">"your_password"</span>,
+    <span class="s2">"timeout"</span>:300,
+    <span class="s2">"method"</span>:<span class="s2">"aes-256-cfb"</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>start server and client</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">in </span>server pc&gt;
+ssserver -c /etc/shadowsocks.json -d start 
+<span class="o">(</span>to stop, just change <span class="s2">"start"</span> to <span class="s2">"stop"</span><span class="o">)</span>
+<span class="k">in </span>client pc&gt;
+sslocal -c /etc/shadowsocks.json</code></pre></figure>
+
+<ul>
+  <li>autostart the service</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vi /etc/rc.local
+<span class="o">(</span>put this line before <span class="nb">exit </span>0<span class="o">)</span>
+/usr/bin/python /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start</code></pre></figure>
 
 
                         <br>
