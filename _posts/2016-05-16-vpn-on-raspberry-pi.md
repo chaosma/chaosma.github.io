@@ -140,7 +140,7 @@ TUN/TAP packets.
 debug levels). 
 
 ## Use Shadowsocks
-openvpn is easy to be blocked because when we try to connect openvpn server, the respond message contains openvpn header which is easy to detect. But shadowsocks will ignore such requests. shadowsocks is also easier to configure.
+By no way I am an expert, but from what I have heard, openvpn is easy to be blocked. In the stage of certificate and security key exchange, the pattern/fingerprint is easy to detect. shadowsocks uses different approach, it uses the same password in server and client side. There is no need to do key exchange in handshake stage. Also, shadowsocks is easier to configure.
 
 * Install shadowsocks
 {% highlight bash %}
