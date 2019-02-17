@@ -17,9 +17,7 @@ published: true
 >&quot;If anything is worth doing, do it with all your heart.&quot;
 ><small><cite title="Buddha">Buddha</cite></small>
 
-I have been away from the blog for quite a while. Recently, I encountered a wonderfull static website generating tool-Jekyll. After searching online, I decided to use [hmfaysal-omega-theme](https://github.com/hmfaysal/hmfaysal-omega-theme) and began to build my new blog. Here is my old blog building from Django+MongoDB [threelifestone](http://threelifestone.com). If the link not work, I must have close it in the future. 
-
-
+I have been away from the blog for quite a while. Recently, I encountered a wonderfull static website generating tool-Jekyll. 
 
 <section id="table-of-contents" class="toc">
   <header>
