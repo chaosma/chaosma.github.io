@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: chaosma.github.io
+Token: d1308d8267a38fead8365a3dfae3a8f8cf63d7336702208cc0316ad82bb14a65
