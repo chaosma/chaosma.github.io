@@ -64,7 +64,7 @@ links:
 #    url: /chao-ma
 
 # Chao added the following:
-gems : [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate:    7
 paginate_path: "page:num"
 
