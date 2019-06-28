@@ -64,9 +64,11 @@ links:
 #    url: /chao-ma
 
 # Chao added the following:
-plugins: [jekyll-paginate]
+plugins_dir: [jekyll-paginate]
 paginate:    7
 paginate_path: "page:num"
+
+gems: [jekyll-paginate]
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Denver
