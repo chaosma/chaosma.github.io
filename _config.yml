@@ -20,7 +20,7 @@ fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
-url:      "http://threelifestone.com"
+url:      "https://threelifestone.com"
 
 # Owner/author information
 owner:
@@ -76,7 +76,7 @@ markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 # it defines the format of the url link
-permalink:   /:categories/:title
+permalink:   /:categories/:title:output_ext
 
 kramdown:
   auto_ids: true
@@ -94,8 +94,8 @@ kramdown:
 
 prose:
   rooturl: '_posts'
-  siteurl: 'https://chaosma.github.io/'
-  relativeLinks: 'https://chaosma.github.io/links.jsonp'
+  siteurl: 'http://threelifestone.com/'
+  relativeLinks: 'http://threelifestone.com/links.jsonp'
   media: 'images'
   metadata:
     _posts:
