@@ -94,8 +94,8 @@ kramdown:
 
 prose:
   rooturl: '_posts'
-  siteurl: 'http://threelifestone.com/'
-  relativeLinks: 'http://threelifestone.com/links.jsonp'
+  siteurl: 'https://threelifestone.com/'
+  relativeLinks: 'https://threelifestone.com/links.jsonp'
   media: 'images'
   metadata:
     _posts:
